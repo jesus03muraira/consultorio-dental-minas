@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consultorio Dental Minas | Dentista en Monterrey</title>
+  <meta name="description" content="Consultorio Dental Minas — Dentista en Monterrey con más de 15 años de experiencia. Ortodoncia, endodoncia, odontopediatría y atención a pacientes especiales y geriátricos. Abierto las 24 horas." />
+  <meta name="theme-color" content="#0e7a6b" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Consultorio Dental Minas | Dentista en Monterrey" />
+  <meta property="og:description" content="Más de 15 años cuidando tu salud bucal. Ortodoncia, endodoncia y atención especializada. Abierto las 24 horas." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --teal: #0e7a6b;
+      --teal-dark: #0a5a4f;
+      --teal-deep: #063d36;
+      --mint: #e8f5f2;
+      --mint-2: #f2faf8;
+      --gold: #c9a227;
+      --ink: #12211f;
+      --muted: #5c6b68;
+      --line: #e2ece9;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(6, 61, 54, .06);
+      --shadow-md: 0 12px 30px rgba(6, 61, 54, .10);
+      --shadow-lg: 0 24px 60px rgba(6, 61, 54, .16);
+      --radius: 18px;
+      --maxw: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; line-height: 1.12; font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    section { position: relative; }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 15px;
+      padding: 14px 26px; border-radius: 999px;
+      border: 1.5px solid transparent; cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary { background: var(--teal); color: #fff; box-shadow: var(--shadow-sm); }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-ghost { background: transparent; color: var(--teal-dark); border-color: var(--line); }
+    .btn-ghost:hover { border-color: var(--teal); background: var(--mint-2); }
+    .btn-white { background: #fff; color: var(--teal-dark); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* ---------- Navbar ---------- */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: saturate(160%) blur(14px);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand .logo {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+      display: grid; place-items: center; color: #fff; font-size: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; letter-spacing: -.2px; line-height: 1.05; }
+    .brand .name small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 11.5px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a.link {
+      padding: 9px 14px; border-radius: 999px; font-weight: 500; font-size: 15px; color: var(--ink);
+      transition: background .18s ease, color .18s ease;
+    }
+    .nav-links a.link:hover { background: var(--mint); color: var(--teal-dark); }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .menu-btn span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; transition: .25s; }
+
+    /* ---------- Hero ---------- */
+    .hero { background: radial-gradient(1100px 500px at 80% -10%, var(--mint) 0%, transparent 60%), var(--white); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 84px 0 92px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--mint); color: var(--teal-dark);
+      font-weight: 600; font-size: 13px; letter-spacing: .02em;
+      padding: 8px 15px; border-radius: 999px; margin-bottom: 22px;
+    }
+    .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c07a; box-shadow: 0 0 0 4px rgba(34,192,122,.18); }
+    .hero h1 { font-size: clamp(38px, 5.4vw, 62px); letter-spacing: -1.2px; font-weight: 600; }
+    .hero h1 .accent { color: var(--teal); }
+    .hero p.lead { font-size: 18.5px; color: var(--muted); margin: 22px 0 30px; max-width: 540px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 34px; margin-top: 44px; flex-wrap: wrap; }
+    .hero-stats .stat b { font-family: 'Fraunces', serif; font-size: 30px; color: var(--teal-dark); display: block; line-height: 1; }
+    .hero-stats .stat span { font-size: 13.5px; color: var(--muted); }
+
+    .hero-visual { position: relative; }
+    .hero-card {
+      border-radius: 26px; overflow: hidden; box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/5; background: linear-gradient(160deg, var(--teal) 0%, var(--teal-deep) 100%);
+      position: relative;
+    }
+    .hero-card img { width: 100%; height: 100%; object-fit: cover; opacity: .96; }
+    .badge-float {
+      position: absolute; background: #fff; border-radius: 16px; padding: 14px 18px;
+      box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px;
+    }
+    .badge-float .ic { width: 38px; height: 38px; border-radius: 10px; background: var(--mint); display: grid; place-items: center; color: var(--teal); }
+    .badge-float b { font-size: 15px; }
+    .badge-float small { display: block; color: var(--muted); font-size: 12.5px; }
+    .badge-1 { top: 22px; left: -26px; }
+    .badge-2 { bottom: 26px; right: -22px; }
+
+    /* ---------- Trust bar ---------- */
+    .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--mint-2); }
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; padding: 22px 0; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--teal-deep); font-size: 15px; }
+    .trust-item svg { color: var(--teal); flex: none; }
+
+    /* ---------- Section heads ---------- */
+    .sec { padding: 92px 0; }
+    .eyebrow { color: var(--teal); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+    .sec-title { font-size: clamp(30px, 3.6vw, 44px); letter-spacing: -.6px; margin: 12px 0 0; }
+    .sec-intro { color: var(--muted); font-size: 17.5px; max-width: 620px; margin-top: 16px; }
+    .center { text-align: center; }
+    .center .sec-intro { margin-left: auto; margin-right: auto; }
+
+    /* ---------- Sobre nosotros ---------- */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+    .about-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 5/4; }
+    .about-media img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h2 { margin-top: 12px; }
+    .about-text p { color: var(--muted); font-size: 17px; margin-top: 18px; }
+    .about-list { list-style: none; margin: 26px 0 0; display: grid; gap: 14px; }
+    .about-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; }
+    .about-list .check { flex: none; width: 26px; height: 26px; border-radius: 8px; background: var(--mint); color: var(--teal); display: grid; place-items: center; margin-top: 1px; }
+
+    /* ---------- Servicios ---------- */
+    .services { background: linear-gradient(180deg, var(--mint-2), #fff); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+    .card {
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 30px 26px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .card .icn {
+      width: 54px; height: 54px; border-radius: 14px;
+      background: var(--mint); color: var(--teal);
+      display: grid; place-items: center; margin-bottom: 18px;
+    }
+    .card h3 { font-size: 21px; }
+    .card p { color: var(--muted); font-size: 15.5px; margin-top: 10px; }
+
+    /* ---------- CTA banner ---------- */
+    .cta-band { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%); color: #fff; border-radius: 26px; padding: 52px; display: grid; grid-template-columns: 1.4fr auto; gap: 30px; align-items: center; box-shadow: var(--shadow-md); }
+    .cta-band h2 { color: #fff; font-size: clamp(26px, 3vw, 36px); }
+    .cta-band p { color: rgba(255,255,255,.82); margin-top: 12px; font-size: 17px; }
+    .cta-band .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ---------- Contacto ---------- */
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: stretch; }
+    .info-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow-sm); }
+    .info-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .info-item:last-child { border-bottom: none; }
+    .info-item .ic { flex: none; width: 46px; height: 46px; border-radius: 12px; background: var(--mint); color: var(--teal); display: grid; place-items: center; }
+    .info-item h4 { font-family: 'Inter', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+    .info-item p { font-size: 16.5px; font-weight: 500; margin-top: 3px; }
+    .info-item a p { color: var(--teal-dark); }
+    .hours-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,192,122,.12); color: #0f8a54; font-weight: 600; font-size: 13.5px; padding: 6px 12px; border-radius: 999px; margin-top: 8px; }
+    .map-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--line); min-height: 420px; }
+    .map-card iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--teal-deep); color: rgba(255,255,255,.82); margin-top: 20px; }
+    .foot { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; padding: 62px 0 40px; }
+    .foot .brand .name { color: #fff; }
+    .foot .brand .name small { color: rgba(255,255,255,.6); }
+    .foot p { font-size: 15px; margin-top: 16px; max-width: 320px; }
+    .foot h5 { color: #fff; font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; }
+    .foot ul { list-style: none; display: grid; gap: 11px; }
+    .foot ul a { font-size: 15px; color: rgba(255,255,255,.78); transition: color .18s; }
+    .foot ul a:hover { color: #fff; }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.12); padding: 22px 0; font-size: 13.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: rgba(255,255,255,.6); }
+
+    /* Floating WhatsApp/Call */
+    .float-call {
+      position: fixed; right: 22px; bottom: 22px; z-index: 90;
+      background: var(--teal); color: #fff; border-radius: 999px;
+      padding: 14px 22px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: var(--shadow-lg); transition: transform .2s;
+    }
+    .float-call:hover { transform: scale(1.05); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-grid, .cta-band { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .hero-visual { max-width: 420px; margin: 0 auto; }
+      .badge-2 { right: 8px; } .badge-1 { left: 8px; }
+      .foot { grid-template-columns: 1fr 1fr; }
+      .cta-band { text-align: center; } .cta-band .actions { justify-content: center; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .menu-btn { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column; align-items: stretch;
+        position: absolute; top: 72px; left: 0; right: 0; background: #fff;
+        border-bottom: 1px solid var(--line); padding: 14px 20px 20px; gap: 4px;
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.open .nav-cta { flex-direction: column; margin-top: 8px; }
+      .nav-links.open .btn { justify-content: center; }
+      .cards { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr; }
+      .sec { padding: 66px 0; }
+      .cta-band { padding: 36px 26px; }
+      .hero-grid { padding: 54px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header>
+    <div class="wrap nav">
+      <a href="#inicio" class="brand">
+        <span class="logo">🦷</span>
+        <span class="name">Dental Minas<small>Consultorio Dental</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a class="link" href="#inicio">Inicio</a>
+        <a class="link" href="#nosotros">Sobre Nosotros</a>
+        <a class="link" href="#servicios">Servicios</a>
+        <a class="link" href="#contacto">Contacto</a>
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="tel:+528112100164">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Llamar
+          </a>
+        </div>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="pill"><span class="dot"></span> Abierto las 24 horas · Monterrey, N.L.</span>
+        <h1>Tu sonrisa en manos <span class="accent">expertas</span>, a cualquier hora del día.</h1>
+        <p class="lead">Más de 15 años de experiencia cuidando tu salud bucal. Odontología especializada en ortodoncia y endodoncia, con atención cálida para niños, pacientes especiales y adultos mayores.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+528112100164">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Agenda tu cita · 81 1210 0164
+          </a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>+15</b><span>Años de experiencia</span></div>
+          <div class="stat"><b>24/7</b><span>Atención disponible</span></div>
+          <div class="stat"><b>100%</b><span>Trato personalizado</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" alt="Consultorio dental profesional" />
+        </div>
+        <div class="badge-float badge-1">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div><b>Ortodoncia</b><small>Especializada</small></div>
+        </div>
+        <div class="badge-float badge-2">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><b>Precios accesibles</b><small>Excelente calidad</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAR ============ -->
+  <section class="trust">
+    <div class="wrap trust-row">
+      <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Abierto las 24 horas</div>
+      <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z"/></svg> Odontología especializada</div>
+      <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM17 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a7 7 0 0 1 14 0M17 14a5 5 0 0 1 5 5"/></svg> Niños y adultos mayores</div>
+      <div class="trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg> Atención cálida y humana</div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE NOSOTROS ============ -->
+  <section class="sec" id="nosotros">
+    <div class="wrap about-grid">
+      <div class="about-media">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="Atención dental especializada" />
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Sobre Nosotros</span>
+        <h2 class="sec-title">Cuidamos tu salud bucal con experiencia y calidez</h2>
+        <p>En <strong>Consultorio Dental Minas</strong> llevamos más de 15 años acompañando a las familias de Monterrey en el cuidado de su sonrisa. Combinamos odontología especializada con un trato humano y cercano, para que cada visita sea cómoda y sin estrés.</p>
+        <p>Atendemos con dedicación a niños, pacientes con necesidades especiales y adultos mayores, adaptando cada tratamiento a lo que tú y tu familia necesitan, siempre con excelentes precios.</p>
+        <ul class="about-list">
+          <li><span class="check"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Más de 15 años de experiencia comprobada</li>
+          <li><span class="check"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Especialistas en ortodoncia y endodoncia</li>
+          <li><span class="check"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Atención a niños, pacientes especiales y geriátricos</li>
+          <li><span class="check"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Excelentes precios y disponibilidad 24 horas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS ============ -->
+  <section class="sec services" id="servicios">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Nuestros Servicios</span>
+        <h2 class="sec-title">Tratamientos para toda la familia</h2>
+        <p class="sec-intro">Odontología integral y especializada, pensada para cada etapa de la vida y cada necesidad.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 5c0 8 3 14 8 14s8-6 8-14M9 5v3M15 5v3"/></svg></div>
+          <h3>Ortodoncia</h3>
+          <p>Brackets y alineadores para corregir la posición de tus dientes y lograr una sonrisa alineada y funcional.</p>
+        </div>
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 0 5 2 5 5 0 4-2 5-2 9 0 3-1 6-3 6s-3-3-3-6c0-4-2-5-2-9 0-3 2-5 5-5z"/></svg></div>
+          <h3>Endodoncia</h3>
+          <p>Tratamiento de conductos para salvar dientes dañados, eliminando el dolor y conservando tu pieza natural.</p>
+        </div>
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.2"/><path d="M3 20a6 6 0 0 1 12 0M15 20a4.5 4.5 0 0 1 6 0"/></svg></div>
+          <h3>Odontopediatría</h3>
+          <p>Atención especial para los más pequeños, en un ambiente amable que cuida su primera experiencia dental.</p>
+        </div>
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Pacientes Especiales</h3>
+          <p>Cuidado adaptado y paciente para personas con necesidades especiales, con el tiempo y la atención que merecen.</p>
+        </div>
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+          <h3>Atención Geriátrica</h3>
+          <p>Tratamientos pensados para adultos mayores, priorizando su comodidad, salud y calidad de vida.</p>
+        </div>
+        <div class="card">
+          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8s2 2 7 2 7-2 7-2"/><circle cx="12" cy="3" r="1.5"/></svg></div>
+          <h3>Odontología General</h3>
+          <p>Limpiezas, resinas, extracciones y revisiones preventivas para mantener tu boca sana durante todo el año.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA BAND ============ -->
+  <section class="wrap" style="padding: 0 24px 40px;">
+    <div class="cta-band">
+      <div>
+        <h2>¿Necesitas atención dental hoy mismo?</h2>
+        <p>Estamos disponibles las 24 horas para atenderte. Llámanos y agenda tu cita con nuestro equipo.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-white" href="tel:+528112100164">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          81 1210 0164
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="sec" id="contacto" style="padding-top: 40px;">
+    <div class="wrap">
+      <div class="center" style="margin-bottom: 52px;">
+        <span class="eyebrow">Contacto y Ubicación</span>
+        <h2 class="sec-title">Visítanos en Monterrey</h2>
+        <p class="sec-intro">Estamos ubicados en la Col. Obrera. Con gusto te atendemos a cualquier hora.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="info-card">
+          <div class="info-item">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><h4>Dirección</h4><p>Col. Obrera, Sarabia, 64490<br/>Monterrey, N.L.</p></div>
+          </div>
+          <div class="info-item">
+            <a href="tel:+528112100164" style="display:flex; gap:16px; width:100%;">
+              <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div><h4>Teléfono</h4><p>81 1210 0164</p></div>
+            </a>
+          </div>
+          <div class="info-item">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+            <div><h4>Horario</h4><p>Todos los días<span class="hours-tag"><span style="width:7px;height:7px;border-radius:50%;background:#0f8a54;display:inline-block;"></span> Abierto las 24 horas</span></p></div>
+          </div>
+          <div style="margin-top: 22px;">
+            <a class="btn btn-primary" style="width:100%; justify-content:center;" href="https://www.google.com/maps/dir/?api=1&destination=Consultorio+Dental+Minas+Col+Obrera+Sarabia+64490+Monterrey" target="_blank" rel="noopener">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Cómo llegar
+            </a>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <iframe
+            src="https://www.google.com/maps?q=Consultorio%20Dental%20Minas%2C%20Col%20Obrera%2C%20Sarabia%2C%2064490%20Monterrey%2C%20N.L.&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Consultorio Dental Minas en Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div class="brand">
+          <span class="logo">🦷</span>
+          <span class="name">Dental Minas<small>Consultorio Dental</small></span>
+        </div>
+        <p>Más de 15 años cuidando la sonrisa de las familias de Monterrey con odontología especializada, calidez humana y excelentes precios.</p>
+      </div>
+      <div>
+        <h5>Navegación</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:+528112100164">81 1210 0164</a></li>
+          <li><a href="https://www.google.com/maps?q=Consultorio+Dental+Minas+Col+Obrera+Sarabia+64490+Monterrey" target="_blank" rel="noopener">Col. Obrera, Sarabia, Monterrey</a></li>
+          <li>Abierto las 24 horas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <span>© <span id="year"></span> Consultorio Dental Minas · Monterrey, N.L.</span>
+      <span>Tu salud bucal, nuestra prioridad.</span>
+    </div>
+  </footer>
+
+  <a class="float-call" href="tel:+528112100164" aria-label="Llamar al consultorio">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Llamar
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+</body>
+</html>
