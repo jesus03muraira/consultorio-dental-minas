@@ -133,14 +133,16 @@
 
     /* Services */
     .services { background: var(--bg-soft); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
-    .card { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 30px 26px 28px; transition: transform .22s, box-shadow .22s, border-color .22s; }
-    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--blue-100); }
-    .card .icn { width: 56px; height: 56px; border-radius: 15px; background: linear-gradient(135deg, var(--blue), var(--blue-500)); color: #fff; display: grid; place-items: center; margin-bottom: 20px; box-shadow: var(--shadow-blue); }
-    .card h3 { font-size: 20px; color: var(--ink); }
-    .card p { color: var(--slate); font-size: 15px; margin-top: 9px; }
-    .card .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
-    .card .tags span { font-size: 12px; font-weight: 500; color: var(--blue-700); background: var(--blue-50); border: 1px solid var(--blue-100); padding: 4px 10px; border-radius: 999px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+    .scard { position: relative; display: block; border-radius: var(--r); overflow: hidden; box-shadow: var(--shadow-sm); aspect-ratio: 4 / 3.3; transition: transform .25s, box-shadow .25s; }
+    .scard img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .scard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,26,43,.9) 0%, rgba(11,26,43,.42) 42%, rgba(11,26,43,.04) 100%); }
+    .scard .ov { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+    .scard h3 { color: #fff; font-size: 23px; line-height: 1.1; }
+    .scard .cta { margin-top: 9px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 13.5px; color: #fff; display: inline-flex; align-items: center; gap: 7px; opacity: .92; transition: gap .2s; }
+    .scard:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .scard:hover img { transform: scale(1.07); }
+    .scard:hover .cta { gap: 12px; }
 
     /* Reviews */
     .reviews-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
@@ -338,42 +340,30 @@
         <p class="sec-intro">Odontología estética y especializada con la más alta calidad y atención personalizada.</p>
       </div>
       <div class="cards">
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 18.3 7.2 20l.9-5.4-3.9-3.8 5.4-.8z"/></svg></div>
-          <h3>Estética Dental</h3>
-          <p>Diseña la sonrisa que siempre quisiste, con acabados naturales y duraderos.</p>
-          <div class="tags"><span>Carillas de porcelana</span><span>Carillas de resina</span><span>Coronas de zirconia</span></div>
-        </div>
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 0 5 2 5 5 0 4-2 5-2 9 0 3-1 6-3 6s-3-3-3-6c0-4-2-5-2-9 0-3 2-5 5-5z"/></svg></div>
-          <h3>Implantes Dentales</h3>
-          <p>Recupera los dientes perdidos con implantes de titanio de alta durabilidad.</p>
-          <div class="tags"><span>Implantes de titanio</span><span>Coronas sobre implante</span></div>
-        </div>
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 5c0 8 3 14 8 14s8-6 8-14M9 5v3M15 5v3"/></svg></div>
-          <h3>Ortodoncia Invisible</h3>
-          <p>Alinea tus dientes de forma discreta y cómoda, sin brackets metálicos.</p>
-          <div class="tags"><span>Alineadores transparentes</span><span>Guardas oclusales</span></div>
-        </div>
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8s2 2 7 2 7-2 7-2"/><circle cx="12" cy="3" r="1.5"/></svg></div>
-          <h3>Rehabilitación Oral</h3>
-          <p>Devolvemos función y estética a tu boca con un plan integral y completo.</p>
-          <div class="tags"><span>Rehabilitación completa</span><span>Coronas de zirconia</span></div>
-        </div>
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Endodoncia</h3>
-          <p>Salvamos tus dientes eliminando el dolor y la infección con precisión.</p>
-          <div class="tags"><span>Retratamiento</span><span>Urgencias endodóncicas</span></div>
-        </div>
-        <div class="card">
-          <div class="icn"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Periodoncia y Prevención</h3>
-          <p>Encías sanas y limpieza a fondo para una boca saludable a largo plazo.</p>
-          <div class="tags"><span>Tratamiento de encías</span><span>Limpieza profunda</span><span>Muelas del juicio</span></div>
-        </div>
+        <a class="scard" href="servicios/estetica-dental.html">
+          <img src="img/estetica-dental.jpg" alt="Estética dental — diseño de sonrisa" loading="lazy" />
+          <div class="ov"><h3>Estética Dental</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="scard" href="servicios/implantes-dentales.html">
+          <img src="img/implantes-dentales.jpg" alt="Implantes dentales de titanio" loading="lazy" />
+          <div class="ov"><h3>Implantes Dentales</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="scard" href="servicios/ortodoncia-invisible.html">
+          <img src="img/ortodoncia-invisible.jpg" alt="Ortodoncia invisible con alineadores" loading="lazy" />
+          <div class="ov"><h3>Ortodoncia Invisible</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="scard" href="servicios/rehabilitacion-oral.html">
+          <img src="img/rehabilitacion-oral.jpg" alt="Rehabilitación oral completa" loading="lazy" />
+          <div class="ov"><h3>Rehabilitación Oral</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="scard" href="servicios/endodoncia.html">
+          <img src="img/endodoncia.jpg" alt="Endodoncia — tratamiento de conductos" loading="lazy" />
+          <div class="ov"><h3>Endodoncia</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="scard" href="servicios/periodoncia-prevencion.html">
+          <img src="img/periodoncia-prevencion.jpg" alt="Periodoncia y prevención dental" loading="lazy" />
+          <div class="ov"><h3>Periodoncia y Prevención</h3><span class="cta">Ver más <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
       </div>
     </div>
   </section>
