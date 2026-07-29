@@ -135,10 +135,9 @@
     .about-list li { display: flex; gap: 11px; align-items: flex-start; font-size: 15.5px; font-weight: 500; }
     .about-list .check { flex: none; width: 24px; height: 24px; border-radius: 999px; background: var(--blue); color: #fff; display: grid; place-items: center; margin-top: 1px; }
 
-    /* Doctor band */
-    .doctor { padding: 0 0 40px; }
-    .doctor-card { position: relative; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-    .doctor-card img { width: 100%; height: auto; display: block; }
+    /* Doctor band — full bleed edge to edge */
+    .doctor { padding: 0; margin: 0; line-height: 0; }
+    .doctor img { width: 100%; height: auto; display: block; }
 
     /* Services */
     .services { background: var(--bg-soft); }
@@ -272,12 +271,8 @@
   </header>
 
   <!-- DOCTOR -->
-  <section class="doctor" style="padding: 28px 0 8px;">
-    <div class="wrap">
-      <div class="doctor-card">
-        <img src="dr.jpg" alt="Dr. Eduardo Serrano G. — Dental St. Engracia, Salud y Estética Dental" />
-      </div>
-    </div>
+  <section class="doctor">
+    <img src="dr.jpg" alt="Dr. Eduardo Serrano G. — Dental St. Engracia, Salud y Estética Dental" />
   </section>
 
   <!-- HERO -->
